@@ -1,0 +1,66 @@
+<!-- render the header file before rendering current page -->
+<%- include('includes/adminHeader.ejs') %>
+    <main>
+
+        <div class="loginScreen adminUploadNewDocProcess">
+            <h1 style="text-align: center;">Upload New Document</h1>
+            <!-- login form created with input fields and label -->
+            <form action="adminUploadNewDocProcess" method="POST">
+                <div class="loginContainer">
+                    <!-- Take user inputs for username and password -->
+
+                    <div class="formFields">
+                        <label for="instrumentName">Instrument Name:</label>
+                    </div>
+                    <div class="formFields">
+                        <!-- <input type="text" name="instrumentName" id="instrumentName"> -->
+                        <select name="instrumentName" id="instrumentName">
+                            <option value="na" selected>None Applicable</option>
+                            <option value="violin">Violin</option>
+                            <option value="piano">Piano</option>
+                        </select>
+                    </div>
+                    <div class="formFields">
+                        <label for="categoryName">Category Name:</label>
+                    </div>
+                    <div class="formFields">
+                        <!-- <input type="text" name="categoryName" id="categoryName"> -->
+                        <select name="categoryName" id="categoryName">
+                            <option value="welcome">Welcome</option>
+                            <option value="theory">Theory</option>
+                            <option value="recitals">Recitals</option>
+                            <option value="concerts">Concerts</option>
+                            <option value="instrumentSpecific">Instrument Specific</option>
+                        </select>
+                    </div>
+                    <div class="formFields">
+                        <label for="subcategoryName">subcategory Name:</label>
+                    </div>
+                    <div class="formFields">
+                        <!-- <input type="text" name="subcategoryName" id="subcategoryName"> -->
+                        <select name="subcategoryName" id="subcategoryName">
+                            <option value="setup">Setup</option>
+                            <option value="exercises">Excercises</option>
+                            <option value="Scales and Arpeggios">Scales and Arpeggios</option>
+                            <option value="studies">Studies</option>
+                            <option value="pieces">Pieces</option>
+                        </select>
+                    </div>
+                    <div class="formFields">
+                        <label for="docName">Document Name:</label>
+                    </div>
+                    <div class="formFields">
+                        <input type="text" placeholder="Must match the file name, with ext" name="docName" id="docName">
+                    </div>
+
+                </div>
+                <div class="loginBtn">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+            <!-- To display error to user in case of incorrect entry for username or password -->
+
+        </div>
+    </main>
+    <!-- render the footer file after rendering current page -->
+    <%- include('includes/footer.ejs') %>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Daly Music Academy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <script type="text/javascript" src="/js/homepage.js"></script> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- <script src="/tinymce js/tinymce/tinymce.min.js"></script>  -->
+    <script type="text/javascript" src="/js/heroImageSlider.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="/css/homepage.css">
+    <!-- <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"> -->
+
+
+</head>
+
+<body>
+
+    <header>
+        <div class="announcement">
+            <p><strong>Sign up TODAY and receive Two ½hr lessons FREE! </strong></p>
+        </div>
+        <div class="headerContainer">
+            <div class="dmaLogo">
+                <a href="/"><img src="/images/DMA_Logo_Black___Red-removebg-preview.png" alt="logo" width="200px" /></a>
+            </div>
+
+            <div class="navMenu" id="myTopNav">
+                <nav id="studentMenu">
+                    <ul class="headerMenu">
+                        <li>
+                            <a class="navLink" href="/">Home</a>
+                        </li>
+                        <li>
+                            <a class="navLink" href="/musicLessons">Music Lesson</a>
+                        </li>
+                        <li>
+                            <a class="navLink" href="/rockAndOrchestraCamp">Classic Rock And Orchestra Camp</a>
+                        </li>
+                        <li>
+                            <a class="navLink" href="/teachers">Teachers</a>
+                        </li>
+                        <li>
+                            <a class="navLink" href="/#contact">Contact</a>
+                        </li>
+                        <li>
+                            <a class="navLink" href="/instrument_Rent_Purchase">Rent/Purchase</a>
+                        </li>
+                        <li>
+                            <a class="navLink" href="/classNotes/<%= userInstrument %>">Class Notes</a>
+                        </li> 
+                        <li>
+                            <a class="navLink" href="/studentLogout">logout</a>
+                        </li> 
+                      
+                    </ul>
+
+                    <a href="javascript:void(0);" class="icon" id="hamburger" onclick="myFunction()">
+                        <i class="fa" style="font-size: 44px;margin-top: -8px;">&#xf0c9;</i>
+                </a>
+                </nav>
+
+            </div>
+        </div>
+        <script>
+            // Get the current page URL
+            var currentUrl = window.location.href;
+
+            // Get all the menu links
+            var menuLinks = document.querySelectorAll('.headerMenu li a');
+
+            // Loop through each link and add the "current" class to the one with a matching URL
+            for (var i = 0; i < menuLinks.length; i++) {
+                if (menuLinks[i].href === currentUrl) {
+                    menuLinks[i].classList.add('current');
+                    break;
+                }
+            }
+
+            function myFunction() {
+            
+                
+                var mobileMenu = document.getElementById("myTopNav");
+
+                if (mobileMenu.className === "navMenu") {
+
+                    mobileMenu.className += " responsive";
+                    
+                } else {
+                    mobileMenu.className = "navMenu";
+                }
+            }
+     
+        </script>
+    </header>

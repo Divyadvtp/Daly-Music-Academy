@@ -1,0 +1,91 @@
+<!-- render the header file before rendering current page -->
+<%- include('includes/iframeHeader.ejs') %>
+
+<main>
+    <div class="adminRegisteredStudents">
+        <h1 style="text-align: center;">Registered Students</h1>
+
+        <table>
+            <tbody>
+                <tr>
+                    <th>Reg No.</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Age</th>
+                    <th>Instrument</th>
+                    <th>User Status</th>
+                    <th>Pmt Status</th>
+                    <th>Login Created</th>
+                    <th>Confirm Registration</th>
+                    <th>Delete</th>
+                </tr>
+
+                <!-- iteratig over userTickets list to display list of records to user -->
+                <% if(typeof(registeredUsers) !='undefined' ) { for(user of registeredUsers){ %>
+                    <form action="editRegisteredSudentsSuccess" method="POST" enctype="application/json">
+
+                        <input type="hidden" name="id" id="id" value="<%= user._id %>">
+                        <tr id="<%= user.userRegistrationNumber %>">
+                            <td>
+                                <!-- <input type="text" name="userRegistrationNumber" id="userRegistrationNumber"
+                                    value="<%= user.userRegistrationNumber %>"> -->
+                                <p name="userRegistrationNumber" id="userRegistrationNumber">
+                                    <%= user.userRegistrationNumber %>
+                                </p>
+                            </td>
+                            <td>
+                                <input type="text" name="username" id="username" value="<%= user.userName %>">
+                            </td>
+                            <td>
+                                <input type="email" name="userEmail" id="userEmail" value="<%= user.userEmail %>">
+                            </td>
+                            <td>
+                                <input type="text" name="userPhone" id="userPhone" value="<%= user.userPhone %>">
+                            </td>
+                            <td>
+                                <input type="text" name="userAge" id="userAge" value="<%= user.userAge %>">
+                            </td>
+                            <td>
+                                <input type="text" name="userInstrument" id="userInstrument"
+                                    value="<%= user.userInstrument %>">
+                            </td>
+                            <td>
+                                <!-- <select name="userStatus" id="userStatus">
+                                    <option value="active" selected>Active</option>
+                                    <option value="inactive" selected>Inactive</option>
+                                </select> -->
+                               <p name="userStatus" id="userStatus"> <%= user.userStatus %></p>
+                            </td>
+                            <td>
+                                <select name="userPaymentStatus" id="userPaymentStatus">
+                                    <option value="clear" selected> Clear</option>
+                                    <option value="pending" selected>Pending</option>
+                                </select>
+                               <!-- <p name="userPaymentStatus" id="userPaymentStatus"> <%= user.userPaymentStatus %></p> -->
+                            </td>
+                            <td>
+                                <select name="userIsLoginCreated" id="userIsLoginCreated">
+                                    <option value="true"> Yes</option>
+                                    <option value="false" selected>No</option>
+                                </select>
+                               <!-- <p name="userIsLoginCreated" id="userIsLoginCreated"> <%= user.userIsLoginCreated%></p> -->
+                            </td>
+                            <td>
+                                <a class="classA" href="/confirmRegistration/<%= user._id %>">Confirm</a>
+                            </td>
+                            <td>
+                                <a class="classA" href="/delete/registeredUser/<%= user._id %>">Delete</a>
+                            </td>
+                        </tr>
+
+                        <% } } %>
+                        <div class="adminRegisterStudentBtn">
+                                <input type="button" value="Cancel">
+                                <input type="submit" value="Update">
+                        </div>
+                    </form>
+            </tbody>
+        </table>
+    </div>
+</main>

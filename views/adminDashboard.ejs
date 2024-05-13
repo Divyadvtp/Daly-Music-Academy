@@ -1,0 +1,39 @@
+<%- include('includes/adminHeader.ejs') %>
+
+    <div class="adminDashboard" id="adminDashboardClick">
+        <main class="parent-grid">
+            <aside class="child-grid-sidebar">
+                <div class="dashboardGrid">
+                    <div class="dashboardGrid-item">
+                        <a class="dashboardBtn"  onclick="adminDashboardSetState('adminRegisteredStudents')" target="display-adminRegisteredStudents" href="/adminRegisteredStudents"> Registered Students</a>
+                        
+                    </div>
+                    <div class="dashboardGrid-item">
+                         
+                        <a class="dashboardBtn"  onclick="adminDashboardSetState('adminEnrolledStudents')" target="display-adminEnrolledStudents" href="/adminEnrolledStudents"> Enrolled Students
+                        </a>
+                    </div>
+                    <div class="dashboardGrid-item"> 
+                        
+                        <a class="dashboardBtn" onclick="adminDashboardSetState('adminRegisterNewStudent')" target="display-adminRegisterNewStudent" href="/adminRegisterNewStudent"> Create Student Login
+                        </a>
+                    </div>
+                </div>
+             </aside>
+            <content id="adminDashboardContent" class="child-grid-content">
+                <div id="adminRegisteredStudents">
+                    <iframe class="adminRegisteredStudentsIframe"  name="display-adminRegisteredStudents" style="width:90%;height:600px"></iframe>
+                </div>
+                <div id="adminEnrolledStudents">
+                    <iframe  name="display-adminEnrolledStudents" style="width:90%;height:600px"></iframe>
+                </div>
+                <div id="adminRegisterNewStudent">
+                    <iframe name="display-adminRegisterNewStudent" style="width:90%;height:600px"></iframe>
+                </div>
+                
+            </content>
+        </main>
+    </div>
+   
+
+    <%- include('includes/footer.ejs') %>

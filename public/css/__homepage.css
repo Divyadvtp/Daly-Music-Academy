@@ -1,0 +1,1203 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+
+
+body {
+    /* width: 75%; */
+    margin: auto;
+    display: block;
+    font-family: sans-serif;
+    position: relative;
+    /* background-color: #f9dbd040; */
+    /* background-color: #F0EFEF; */
+    background-color: #fffbf5;
+    line-height: 25px;
+}
+
+a {
+    text-decoration: none;
+    color: black
+}
+
+
+/* body.fixed {
+    position: fixed;
+} */
+
+/* a:hover {
+    text-decoration: double;
+    text-shadow: 2px 2px 2px grey;
+} */
+
+.container {
+    width: 100%;
+    margin: auto;
+
+}
+
+
+/******************************
+    header menu css
+/******************************/
+.announcement {
+    background-color: #f5d29d;
+    position: fixed;
+    width: 99.7%;
+    height: 3.8%;
+    top: 0px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    text-align: center;
+    font-size: 12px;
+    border-radius: 1%;
+    border: 2px solid orange;
+    letter-spacing: 0.5px;
+    color: #C0282E;
+}
+
+.headerContainer {
+
+    display: flex;
+    /* background-color: #F0EFEF; */
+    background-color: #f8f4ea;
+    position: fixed;
+    width: 100%;
+    top: 35px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    height: 101px;
+    padding-top: 13px;
+    box-shadow: 0px 0px 6px #6e6868;
+}
+
+.dmaLogo {
+    left: 60px;
+    position: absolute;
+}
+
+.dmaLogo img {
+    width: 170px;
+}
+
+.navMenu .icon {
+    display: none;
+}
+
+.navLink {
+    margin-right: 25px;
+
+}
+
+.navMenu {
+    right: 30px;
+    position: absolute;
+}
+
+
+.navMenu nav {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 30px 0px;
+    font-size: 16px;
+    text-align: center;
+}
+
+nav ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+nav ul:hover nav li:not(:hover) a {
+    opacity: 0.2;
+}
+
+nav ul li {
+    position: relative;
+    /* padding: 30px 25px 30px 25px; */
+    cursor: pointer;
+}
+
+nav ul li a::after {
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #C0282E;
+    transform: scaleX(0);
+    transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    transform: scaleX(1);
+}
+
+nav ul li a {
+    position: relative;
+    display: flex;
+    color: #C0282E;
+    font-family: Lato, sans-serif;
+    text-decoration: none;
+    transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.headerMenu .current {
+    border-bottom: 2px solid #C0282E;
+}
+
+/* -----------------------
+    Login Content Css
+----------------------- */
+
+.containerLogin {
+    /* display: grid;
+    grid-template-areas:
+        'header header header'
+        'nav nav nav'
+        'main main main'
+        'footer footer footer';
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    max-height: 100%; */
+    position: relative;
+}
+
+.loginContainer {
+    display: grid;
+    grid-template-columns: 150px 200px;
+    grid-gap: 20px;
+    margin-top: 8%;
+}
+
+.loginScreen {
+    width: 40%;
+    margin: 10% auto;
+    padding: 40px;
+    background-color: whitesmoke;
+    border-radius: 2px;
+    border-left: 4px solid #C0282E;
+    height: 43%;
+    box-shadow: 2px 2px 10px #80808080;
+}
+
+.classNotesScreen {
+    min-width: 40%;
+    margin: 10%;
+    padding: 40px;
+    /* background-color: whitesmoke; */
+    border-radius: 2px;
+    /* border-left: 4px solid #C0282E; */
+    height: 43%;
+    /* box-shadow: 2px 2px 10px #80808080; */
+}
+
+.loginBtn {
+    margin: 45px auto;
+    text-align: center;
+}
+
+.loginBtn input {
+    width: 38%;
+    padding: 7px;
+    border-radius: 7px;
+    background-color: #2c2a2a;
+    color: whitesmoke;
+    font-size: 15px;
+    text-align: center;
+}
+
+.btnContact {
+    width: 24%;
+    padding: 9px;
+    border-radius: 7px;
+    /* background-color: #2c2a2a; */
+    background-color: #C0282E;
+    border: 2px solid #C0282E;
+    color: whitesmoke;
+    font-size: 15px;
+    margin: 0 auto;
+    position: absolute;
+    text-align: center;
+    right: 0;
+    left: 0;
+}
+
+.btnContact:hover {
+
+    background-color: whitesmoke;
+    border: 2px solid #C0282E;
+    color: black;
+    cursor: pointer;
+}
+
+
+
+.loginContainer input {
+    width: 100%;
+    padding: 10px;
+}
+
+/* -----------------------
+    Register Content Css
+----------------------- */
+
+.containerRegister {
+    /* display: grid;
+    grid-template-areas:
+        'header header header'
+        'nav nav nav'
+        'main main main'
+        'footer footer footer';
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    max-height: 100%; */
+    position: relative;
+}
+
+.registerContainer {
+    display: grid;
+    grid-template-columns: 150px 200px;
+    grid-gap: 20px;
+    margin-top: 8%;
+}
+
+.registerScreen {
+    width: 40%;
+    margin: 15% auto;
+    padding: 40px;
+    background-color: whitesmoke;
+    border-radius: 2px;
+    border-left: 4px solid #C0282E;
+    height: 43%;
+    box-shadow: 2px 2px 10px #80808080;
+}
+
+.registerBtn {
+    margin: 45px auto;
+    text-align: center;
+}
+
+.registerBtn input {
+    width: 38%;
+    padding: 7px;
+    border-radius: 7px;
+    background-color: #2c2a2a;
+    color: whitesmoke;
+    font-size: 15px;
+    text-align: center;
+}
+
+.registerContainer input {
+    width: 100%;
+    padding: 10px;
+}
+
+.registerContainer select {
+    width: 112%;
+    padding: 10px;
+}
+
+/* css for small header on scroll */
+/* .navMenu {
+    right: 30px;
+    position: absolute;
+    top: -5px;
+} */
+/* .dmaLogo img {
+    width: 105px;
+} */
+/* .headerContainer {
+    display: flex;
+    background-color: #ead7db;
+    position: fixed;
+    width: 100%;
+    top: 35px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    height: 63px;
+    padding-top: 8px;
+} */
+
+/**************************
+Errors CSS
+****************************/
+.alert {
+    position: relative;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+
+.alert-danger {
+    color: #842029;
+    background-color: #f8d7da;
+    border-color: #f5c2c7
+}
+
+.d-flex {
+    display: flex !important
+}
+
+.align-items-center {
+    align-items: center !important
+}
+
+/*******************************
+Main Css
+********************************/
+.mainContainer {
+    padding-top: 127px;
+    /* display: grid; */
+    /* grid-template-rows: 1fr; */
+}
+
+
+.wrappedContent {
+    margin: 50px auto;
+    /* font-family: "Open Sans"; */
+    overflow: hidden;
+    width: 85%;
+}
+
+.wrappedImg {
+    width: 363px;
+    height: 383px;
+    float: left;
+    border-radius: 50px;
+    margin: 10px;
+}
+
+.wrappedImg img {
+    width: 82%;
+    /* padding-top: 70px;
+    float: right;
+    display: inline-block; */
+}
+
+.heroImgSlider {
+    position: relative;
+    overflow: hidden;
+    height: 500px;
+}
+
+.heroImgSlider img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.loginPage {
+    width: 75%;
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+}
+
+.nameTitle {
+    padding: 20px;
+    font-size: 35px;
+    font-weight: lighter;
+    font-family: 'Permanent Marker', cursive;
+    color: #2b2b2b;
+    text-shadow: 8px 8px 0px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.musicLessons {
+    display: grid;
+    padding: 110px 26px 0;
+    display: inline-block;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+
+    width: 75%;
+    margin: auto;
+    display: block;
+}
+
+.right {
+    line-height: 2.5em;
+}
+
+.teachers,
+.instrument_Rent_Purchase,
+.loginPage {
+    padding-top: 13%;
+    display: grid;
+    grid-template-rows: 1fr;
+
+    width: 75%;
+    margin: auto;
+    display: block;
+
+}
+
+.wrappedContent,
+.teachers,
+.instrument_Rent_Purchase,
+.loginPage {
+
+    line-height: 1.8em;
+}
+
+
+.gridContact {
+    width: 48%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    /* grid-template-rows: 0.5fr 0.5fr 0.5fr; */
+    /* grid-gap: 20px; */
+}
+
+.gridContact input,
+.gridContact textarea {
+    padding: 2.5%;
+    margin: 10px;
+    border: 1px solid gray;
+}
+
+.left img {
+    float: right;
+    margin: 5px;
+}
+
+.musicLessons h2 {
+    text-align: center;
+}
+
+.right ul {
+
+    width: 62%;
+}
+
+/***************************
+Rock and Orchestra Camp
+****************************/
+.contrainerCamp {
+    padding-top: 149px;
+    /* display: grid; */
+    /* grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; */
+}
+
+/* .mediaContainer {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+    padding: 30px;
+} */
+.mediaContainer {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10%;
+    padding: 2%;
+    width: 97%;
+}
+
+.videoWidth {
+    /* width: 590px; */
+    width: 100%;
+}
+
+.contrainerCamp h2 {
+    text-align: center;
+
+}
+
+.campImg img {
+    width: 100%;
+    /* padding: 30px; */
+    margin: 0 auto;
+}
+
+.violinImg img {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/********************************
+admin dashboard css
+*********************************/
+iframe {
+    border: 1px solid whitesmoke;
+    padding: 20px;
+    background: whitesmoke;
+    box-shadow: 2px 2px 10px #80808080;
+    border-top: 2px solid #cd7578;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+.adminRegisteredStudentsIframe {
+    width: 97% !important;
+}
+
+#adminRegisterNewStudent iframe {
+    height: 800px !important;
+}
+
+.cancelBtn,
+.updateBtn {
+    padding: 30px;
+}
+
+.dashboardGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 10px;
+}
+
+.dashboardBtn {
+    /* background: #C0282E; */
+    background: linear-gradient(95deg, #7a0e12 5%, #981116 30%, #c6252c 100%);
+    padding: 20px 40px;
+    color: white;
+    border-radius: 20px;
+    /* box-shadow: inset 0px -7px 5px 5px #b7696b; */
+    box-shadow: 0 0px 5px 0 #C0282E;
+}
+
+#adminEnrolledStudents,
+#adminRegisteredStudents,
+#adminRegisterNewStudent {
+    display: none;
+
+}
+
+.adminEnrolledStudents h1,
+.adminRegisteredStudents h1,
+.registerScreen h1 {
+    font-family: sans-serif;
+}
+
+
+
+.adminDashboard {
+    text-align: center;
+    margin-top: 153px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    display: block;
+}
+
+.adminDashboard .parent-grid {
+    display: grid;
+    /* grid-template-rows: 1fr 6fr; */
+    grid-gap: 30px;
+    /* padding: 30px; */
+}
+
+.child-grid-sidebar {
+    padding: 30px 0 0 0;
+}
+
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+
+/******************************
+    Footer css
+/******************************/
+
+
+footer {
+    padding: 30px 0px;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    border-radius: 5px;
+    background-color: #f8f4ea;
+    margin-top: 225px;
+    color: #C0282E;
+    box-shadow: 0px 0px 1px #6e6868;
+
+}
+
+
+
+
+
+
+
+.snip1533 {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    color: #9e9e9e;
+    display: inline-block;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 16px;
+    margin: 35px 10px 10px;
+    max-width: 310px;
+    min-width: 250px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border-top: 5px solid #C0282E;
+}
+
+.snip1533 *,
+.snip1533 *:before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.1s ease-out;
+    transition: all 0.1s ease-out;
+}
+
+.snip1533 figcaption {
+    padding: 13% 10% 12%;
+}
+
+.snip1533 figcaption:before {
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    color: #C0282E;
+    content: "\f10e";
+    font-family: 'FontAwesome';
+    font-size: 32px;
+    font-style: normal;
+    left: 50%;
+    line-height: 60px;
+    position: absolute;
+    top: -30px;
+    width: 60px;
+}
+
+.snip1533 h3 {
+    color: #3c3c3c;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 24px;
+    margin: 10px 0 5px;
+}
+
+.snip1533 h4 {
+    font-weight: 400;
+    margin: 0;
+    opacity: 0.5;
+}
+
+.snip1533 blockquote {
+    font-style: italic;
+    font-weight: 300;
+    margin: 0 0 20px;
+}
+
+
+/* testimonials */
+.testimonials {
+    text-align: center;
+    margin-top: 175px;
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 75%;
+    display: block;
+}
+
+/*************************
+    Teacher CSS
+**************************/
+
+
+
+/* For the section after Hero Image */
+.homePageSection2-parent {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 2%;
+    padding-inline: 2%;
+    /* border-top: 1px solid black; */
+    padding: 2% 1.5% 0%;
+    position: relative;
+}
+
+.homePageSection2-child {
+    margin: 2%;
+
+}
+
+/* Second section after Hero Image */
+.homePageSection3-parent {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 2%;
+    padding-inline: 20px;
+    padding: 2% 1.5% 0%;
+}
+
+.homePageSection3-child {
+    margin: 1%;
+}
+
+/* .profile-card {
+    position: absolute;
+    width: 220px;
+    height: 320px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 50%;
+    box-shadow: 0 0 22px #3336;
+    transition: .6s;
+    margin-top: 28px;
+    
+} */
+
+.profile-card:hover {
+    border-radius: 10%;
+    /* height: 360px; */
+}
+
+.profile-card .img {
+    position: relative;
+    width: 100%;
+    height: 60%;
+    transition: .6s;
+    z-index: 99;
+}
+
+.profile-card:hover .img {
+    transform: translateY(-6%);
+}
+
+.img img {
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 22px #3336;
+    transition: .6s;
+}
+
+.profile-card:hover img {
+    border-radius: 5%;
+}
+
+.caption {
+    text-align: left;
+    transform: translateY(-6%);
+    opacity: 0;
+    /* transition: .1s; */
+}
+
+.profile-card:hover .caption {
+    opacity: 1;
+    margin: 0% 12% 0%;
+    text-align: center;
+}
+
+.caption h3 {
+    font-size: 9%;
+}
+
+.caption p {
+    font-size: 90%;
+    color: #C0282E;
+    margin: 0%;
+    text-decoration: none;
+}
+
+.caption .social-links a {
+    color: #333;
+    margin-right: 8%;
+    font-size: 118%;
+    transition: .6s;
+
+}
+
+.social-links a:hover {
+    color: #0c52a1;
+}
+
+
+/* Phone media query */
+@media screen and (max-width: 600px) {
+
+    /* .navMenu li:not(:first-child) 
+    {
+        display: none;
+    } */
+
+
+
+    .gridContact {
+        width: 85%;
+    }
+
+    .btnContact {
+        width: 38%;
+        padding: 13px;
+    }
+
+    .gridContact input,
+    .gridContact textarea {
+        padding: 7%;
+        margin: 10px;
+        border: 1px solid gray;
+    }
+
+
+    .navMenu li {
+        display: none;
+    }
+
+
+
+    .navMenu a.icon {
+        float: right;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 31px;
+    }
+
+    .container {
+        width: 100%;
+        ;
+    }
+
+    .navMenu.responsive {
+        position: absolute;
+    }
+
+    .navMenu.responsive li .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+        cursor: pointer;
+        z-index: 1000px;
+    }
+
+    .navMenu.responsive ul {
+        display: block;
+        background: whitesmoke;
+        box-shadow: 0px 3px 8px #f6f3f3;
+        border: 1px solid black;
+        position: fixed;
+        right: 0;
+        margin-top: 55px;
+        margin-right: -30px;
+        z-index: 1001;
+    }
+
+    #studentMenu .navMenu.responsive ul {
+
+        right: 30px;
+
+    }
+
+    .navMenu.responsive li {
+        float: none;
+        display: block;
+        text-align: left;
+        padding: 20px;
+        font-size: 24px;
+    }
+
+
+    .dmaLogo img {
+        width: 144px;
+    }
+
+    .dmaLogo {
+        left: 24px;
+        top: 26px;
+    }
+
+    .mediaContainer {
+
+        width: 85% !important;
+        display: grid;
+        grid-template-columns: 1fr !important;
+        
+        padding: 7%;
+        grid-gap: 0%;
+        /* display: inline-block !important; */
+        /* padding: 0 !important;ns
+        margin: 30px; */
+    }
+
+    .videoWidth {
+        width: 100% !important;
+    }
+
+    .musicLessons h2 {
+        font-size: 1.3em;
+    }
+
+    .teachers,
+    .instrument_Rent_Purchase,
+    .loginPage {
+        padding-top: 41%;
+    }
+
+    .homePageSection2-parent,
+    .homePageSection3-parent {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 0;
+        margin: 0 auto;
+        /* padding: 0 30px; */
+    }
+
+    /* for teacher page */
+
+    .teachers section {
+        margin-bottom: 3%;
+    }
+
+    .profile-card {
+        border-radius: 10px;
+        /* height: 360px; */
+    }
+
+    .profile-card .img {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: none;
+        z-index: 99;
+    }
+
+    .profile-card:hover .img {
+        transform: none;
+    }
+
+    .img img {
+        width: 100%;
+        border-radius: 5%;
+        box-shadow: 0 0 22px #3336;
+        transition: .6s;
+    }
+
+    .profile-card:hover img {
+        border-radius: 5%;
+    }
+
+    .caption {
+        text-align: center;
+        margin: 31px;
+        transform: none;
+        opacity: 1;
+        /* transition: .1s; */
+
+    }
+
+    .profile-card:hover .caption {
+        opacity: 1;
+        margin: 31px;
+        text-align: center;
+    }
+
+    /* Login */
+    .loginContainer {
+
+        grid-template-columns: 219px;
+
+    }
+
+    .loginBtn input {
+        width: 72%;
+        padding: 16px;
+        font-size: 18px;
+        letter-spacing: 1.5px;
+
+    }
+
+    .loginScreen {
+        width: 58%;
+        margin: 48% auto;
+    }
+
+    .registerScreen {
+        width: 66%;
+        margin: 45% auto;
+    }
+
+    .registerContainer {
+        display: grid;
+        grid-template-columns: 210px;
+
+    }
+
+    .registerBtn input {
+        width: 72%;
+        padding: 16px;
+        font-size: 18px;
+        letter-spacing: 1.5px;
+
+    }
+
+    .loginContainer input {
+        border: 1px solid gray;
+        border-radius: 3px;
+    }
+
+    .registerContainer input,
+    .registerContainer select {
+        border: 1px solid gray;
+        border-radius: 3px;
+    }
+
+    .classNotesScreen {
+        width: 65%;
+        margin: 46% auto;
+    }
+
+    .classNotesScreen h2 {
+        font-size: 23px;
+    }
+
+    .announcement {
+        font-size: 81%;
+        height: 3.5%;
+        line-height: 7.6%;
+    }
+
+
+}
+
+@media screen and (min-width: 601px) and (max-width: 1920px) {
+
+
+    .navMenu nav {
+        font-size: 76%;
+        letter-spacing: 0.1px;
+    }
+
+    /* Riya's screen */
+    /* .navMenu nav {
+        font-size: 16px;
+        letter-spacing: 0.1px;
+    } */
+
+    .navLink {
+        margin-right: 18px;
+    }
+
+    .loginScreen {
+        margin: 250px auto;
+    }
+
+    .announcement {
+        font-size: 72%;
+        height: 6.3%;
+        line-height: 1;
+    }
+
+    .headerContainer {
+        top: 37px;
+    }
+
+    .teachers {
+        width: 93%;
+    }
+
+    /* Divya's screen */
+    .mediaContainer {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2%;
+        padding: 1.5%;
+    }
+
+    .videoWidth {
+        width: 100%;
+
+    }
+
+    .classNotesScreen {
+        /* margin: 16% auto; */
+        margin: 10%;
+
+    }
+
+    .profile-card .img {
+        position: relative;
+        width: 100%;
+        height: 60%;
+        transition: .6s;
+        z-index: 99;
+    }
+
+    .img img {
+        width: 100%;
+        border-radius: 50%;
+        box-shadow: 0 0 22px #3336;
+        transition: .6s;
+    }
+
+
+    /* Riya's screen */
+    /* .mediaContainer {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10%;
+        padding: 30px;
+        width: 97%;
+    }
+
+    .videoWidth {
+        width: 590px;
+        width: 730px;
+    } 
+    
+    
+    */
+}
+
+@media screen and (min-width: 1921px) and (max-width: 3850px) {
+
+    /* Riya's screen */
+    .navMenu nav {
+        font-size: 16px;
+        letter-spacing: 0.1px;
+    }
+
+    /* Riya's screen */
+    .mediaContainer {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10%;
+        padding: 2%;
+        width: 97%;
+    }
+
+    .videoWidth {
+        width: 100%;
+        /* width: 730px; */
+    }
+
+}
+
+/* @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) { */
+/* Add your styles here */
+/* } */
+
+/* For iPads in landscape mode */
+/* @media only screen and (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) { */
+/* Add your styles here */
+/* } */

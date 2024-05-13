@@ -1,0 +1,228 @@
+/******************************
+Registered student iframe css
+*******************************/
+table {
+    border:  1px solid black;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+.adminRegisteredStudents, .adminEnrolledStudents, .registerScreen {
+    font-family: sans-serif;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+td input {
+    padding: 5px;
+}
+
+td #userAge {
+    width: 50px;
+}
+
+td #username {
+    width: 100px;
+}
+td #userInstrument {
+    width: 50px;
+}
+
+td #userPhone {
+    width: 90px;
+}
+
+td p {
+    text-align: center;
+}
+
+td .classA {
+    text-decoration: none;
+    color: black;
+    border:2px solid #C0282E;
+    padding: 7px;
+    border-radius: 5px;
+    
+}
+
+
+td .classA:hover {
+    background-color: #C0282E;
+    color: white;
+}
+
+/*************************
+Register new student css
+*************************/
+
+.loginContainer {
+    margin-top: 60px;
+}
+
+.row {
+    width: 46%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 7px;
+    font-family: monospace;
+}
+    
+.col-1 {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 0px;
+    padding-left: 25px;
+    flex-basis: 0;
+    flex-grow: 1;
+    margin-bottom: 25px;
+    font-size: 20px;
+    color: black;
+}
+
+.col-2 {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 0px;
+    padding-left: 25px;
+    flex-basis: 0;
+    flex-grow: 1;
+    margin-bottom: 25px;
+    font-size: 20px;
+    color: black;
+}
+
+.loginContainer input {
+    width: 200px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    padding-left: 10px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.loginContainer select {
+    width: 213.5px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    padding-left: 10px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+::placeholder {
+    color: rgba(114, 113, 113, 0.427);
+    font-size: 12px;
+    /* padding-left: 5px; */
+
+}
+
+  .submitBtn input {
+    width: 50%;
+    height: 36px;
+    background: #C0282E;
+    color: #FFFFFF;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    display: inherit;
+    cursor: pointer;
+    margin: 30px auto;
+  } 
+
+  .submitBtn input {
+    width: 50%;
+    height: 36px;
+    background: #C0282E;
+    color: #FFFFFF;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    display: inherit;
+    cursor: pointer;
+    margin: 30px auto;
+    box-shadow: 0px 2px 10px 1px gray;
+  } 
+
+  .submitBtn input:focus {
+    box-shadow: none;
+  }
+
+  .adminRegisterStudentBtn {
+    margin: 30px auto;
+  }
+
+  .adminRegisterStudentBtn input {
+    width: 135px;
+    border: 1px solid #C0282E;
+    border-radius: 3px;
+    padding-left: 10px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-right: 20px;
+  }
+
+  .adminRegisterStudentBtn input:hover {
+    background-color: #C0282E;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0px 2px 10px 1px gray;
+  }
+
+  .enrolledStudentBtn {
+    margin: 30px 9px;
+  }
+
+  .enrolledStudentBtn input {
+    width: 135px;
+    border: 1px solid #C0282E;
+    border-radius: 3px;
+    padding-left: 10px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-right: 20px;
+  }
+
+  .enrolledStudentBtn input:hover {
+    background-color: #C0282E;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0px 2px 10px 1px gray;
+  }
+
+/**************************
+Errors CSS
+****************************/
+.alert {
+  position: relative;
+  padding: 1rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  width: 39%;
+  margin: 10px auto;
+}
+
+.alert-danger {
+  color: #842029;
+  background-color: #f8d7da;
+  border-color: #f5c2c7
+}
+
+.d-flex {
+  display: flex !important
+}
+
+.align-items-center {
+  align-items: center !important
+}

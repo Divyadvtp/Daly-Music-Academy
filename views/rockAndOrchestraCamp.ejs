@@ -1,0 +1,44 @@
+
+<%
+<!-- condition for when typeof is error variable from index.js page inside loginprocess and it is undefined then show error message  -->
+if(sessionLoggedIn == true){%>
+    
+        <!-- error variable to show error message -->
+        <%- include('includes/studentHeader.ejs') %>
+<%}
+else {%> 
+        <%- include('includes/header.ejs') %>
+<%}%>
+
+        <div class="contrainerCamp container">
+                <h2> Rock and Orchestra Camp </h2>
+                <div class="mediaContainer">
+                        <div class="campImg">
+                                <img src="../images/Classical Rock Orchestra Camp - Poster - 2020 - website.jpg" alt="">
+                        </div>
+                        <div>
+                                <video class="videoWidth" controls height="460px"
+                                        poster="../images/poster-testimonial.png">
+                                        <source src="../videos/Classical Rock Orchestra Camp - Aug 19, 2016 - Testimonial - Victoria, Violin.mp4"
+                                                type="video/mp4" />
+                                </video>
+                        </div>
+                        <div>
+                                <video class="videoWidth" controls width="590px" height="460px"
+                                        poster="../images/poster-BadRomance.png">
+                                        <source src="../videos/Classical Rock Orchestra Camp, July 19, 2019. Bad Romance.mp4"
+                                                type="video/mp4" />
+                                </video>
+                        </div>
+                        <div>
+                                <video class="videoWidth" controls width="590px" height="460px"
+                                        poster="../images/poster-pennyLane.png">
+                                        <source src="../videos/Classical Rock Orchestra Camp - Aug 19, 2016 - Penny Lane.mp4"
+                                                type="video/mp4" />
+                                </video>
+                        </div>
+                </div>
+
+        </div>
+
+        <%- include('includes/footer.ejs') %>

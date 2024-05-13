@@ -1,0 +1,112 @@
+<%- include('includes/header.ejs') %>
+
+<!-- preserve form data when reloading page on getting error messages -->
+<% 
+if(typeof(userData) == 'undefined') {
+    userData = {};
+    userData.userName = '';
+    userData.userEmail = '';
+    userData.userPhone = '';
+    userData.userAge = '';
+    userData.userExperienceInYears = '';
+    
+}
+%>
+<div class="">
+    <main>
+        
+        <div class="registerScreen">
+            
+            <h1 style="text-align: center;">Register</h1>
+            <!-- Take user inputs for username and password -->
+            <form action="/submitRegistration" method="POST" enctype="application/json">
+                <div class="registerContainer">
+                    <div class="formLabels">
+                        <label for="username">Name:</label>
+                    </div>
+                    <div class="formFields">
+                        <input type="text" name="userName" id="userName" value="<%= userData.userName %>">
+                    </div>
+                    <div class="formLabels">
+                        <label for="address">Address:</label>
+                    </div>
+                    <div class="formFields">
+                        <input type="text" name="address" id="address">
+                    </div>
+                    <div class="formLabels">
+                        <label for="phone">Telephone/Cell:</label>
+                    </div>
+                    <div class="formFields">
+                        <input type="text" name="phone" id="phone" value="<%= userData.userPhone %>">
+                    </div>
+                    <div class="formLabels">
+                        <label for="email">Email:</label>
+                    </div>
+                    <div class="formFields">
+                        <input type="text" name="email" id="email" value="<%= userData.userEmail %>">
+                    </div>
+                    <div class="formLabels">
+                        <label for="age">Age:</label>
+                    </div>
+                    <div class="formFields">
+                        <input type="text" name="age" id="age" value="<%= userData.userAge %>">
+                    </div>
+                    <div class="formLabels">
+                        <label for="playingLevel">Playing Level:</label>
+                    </div>
+                    <div class="formFields">
+                        <select name="playingLevel" id="playingLevel">
+                            <option value="experienced">Experienced</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="beginner">Beginner</option>
+                        </select>
+                    </div>
+                    <div class="formLabels">
+                        <label for="yearsOfPlayingExperience">Years of Playing Experience:</label>
+                    </div>
+                    <div class="formFields">
+                        <input type="text" name="yearsOfPlayingExperience" id="yearsOfPlayingExperience" value="<%= userData.userExperienceInYears %>">
+                    </div>
+                    <div class="formLabels">
+                        <label for="instrument">Instrument</label>
+                    </div>
+                    <div class="formFields">
+                        <select name="instrument" id="instrument">
+                            <option value="violin">Violin</option>
+                            <option value="viola">Viola</option>
+                            <option value="Piano">piano</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="registerBtn">
+                    <input type="submit" value="Register">
+                </div>
+            </form>
+           
+                <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                <div>
+                    <%
+                    <!-- showing error message when type of errors are not undefine -->
+                    if(typeof(errors) != 'undefined') {
+                        
+                        <!-- for loop for all error that exist -->
+                        for(error of errors) {
+                            %>
+                            <div class="alert alert-danger d-flex align-items-center" role="alert">
+                            <%= error.msg %> <br>
+                            </div>
+                            <%
+                        }
+            
+                    }
+                %>
+                
+            </div>
+            <!-- To display error to user in case of incorrect entry for username or password -->
+            <!-- <p id="errors">
+                
+            </p> -->
+        </div>
+    </main>
+</div>
+    <%- include('includes/footer.ejs') %>

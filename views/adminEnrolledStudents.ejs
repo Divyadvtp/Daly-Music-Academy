@@ -1,0 +1,88 @@
+<!-- render the header file before rendering current page -->
+<%- include('includes/iframeHeader.ejs') %>
+
+<main>
+    <div class="adminEnrolledStudents">
+        <h1 style="text-align: center;">Enrolled Students</h1>
+
+        <table>
+            <tbody>
+                <tr>
+                    <th>Details</th>
+                    <th>Name</th>
+                    <th>User Name</th>
+                    <th>Password</th>
+                    <th>User Status</th>
+                    <th>Pmt Status</th>
+                    <th>Login Created</th>
+                    <!-- <th>Edit</th> -->
+                    <th>Delete</th>
+                </tr>
+
+                <!-- iteratig over userTickets list to display list of records to user -->
+                <% if(typeof(enrolledUsers) !='undefined' ) { for(user of enrolledUsers){ %>
+                    <form action="editEnrolledSudentsSuccess" method="POST" enctype="application/x-www-form-urlencoded">
+                        <input type="hidden" name="id" value="<%= user._id %>">
+                        <tr>
+                            <td>
+                                <!-- <a href="/view/<%= user._id %>"></a> -->
+                                <!-- <input type="text" name="userRegistrationNumber" id="userRegistrationNumber"
+                                    value="<%= user.userRegistrationNumber %>" disabled> -->
+                                <a  href="/adminRegisteredStudents#<%= user.userRegistrationNumber %>">
+                                    <p name="userRegistrationNumber" id="userRegistrationNumber">
+                                        <%= user.userRegistrationNumber %>
+                                    </p>
+                                </a>
+                            </td>
+                            <td>
+                                <input type="text" value="<%= user.userName %>" name="username" id="username">
+                            </td>
+                            <td>
+                                <input type="text" value="<%= user.userLoginName %>" name="userLoginName"
+                                    id="userLoginName">
+                            </td>
+                            <td>
+                                <input type="text" value="<%= user.userPassword %>" name="userPassword"
+                                    id="userPassword">
+                            </td>
+                            <td>
+                                <!-- <select name="userStatus" id="userStatus">
+                                    <option value="active" selected>Active</option>
+                                    <option value="inactive">Inactive</option>
+                                </select> -->
+                               <p name="userStatus" id="userStatus"> <%= user.userStatus %> </p>
+                            </td>
+                            <td>
+                                <!-- <select name="userPaymentStatus" id="userPaymentStatus">
+                                    <option value="clear" selected> Clear</option>
+                                    <option value="pending">Pending</option>
+                                </select> -->
+                               <p name="userPaymentStatus" id="userPaymentStatus"> <%= user.userPaymentStatus %></p>
+                            </td>
+                            <td>
+                                <!-- <select name="userIsLoginCreated" id="userIsLoginCreated">
+                                    <option value="true" selected> Yes</option>
+                                    <option value="false">No</option>
+                                </select> -->
+                                <p name="userIsLoginCreated" id="userIsLoginCreated"><%= user.userIsLoginCreated%></p>
+                            </td>
+                            <!-- <td>
+                                <a href="/edit/<%= user._id %>">Edit</a>
+                            </td> -->
+                            <td>
+                                <a class="classA" href="/delete/enrolledUser/<%= user._id %>">Delete</a>
+                            </td>
+                        </tr>
+
+
+                        <% } } %>
+                        <div class="enrolledStudentBtn">
+                            <input type="button" value="Cancel">
+                            <input type="submit" value="Update">
+                        </div>
+                    </form>
+            </tbody>
+        </table>
+    </div>
+</main>
+<!-- render the footer file after rendering current page -->

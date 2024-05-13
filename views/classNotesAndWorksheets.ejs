@@ -1,0 +1,89 @@
+<!--render the header file before rendering current page-->
+<%- include('includes/studentHeader.ejs') %>
+    <main>
+        <div class="classNotesScreen">
+            <h2 style="text-align: center;">You can access the practice materials here</h2>
+            <p style="text-align: center;">Note:- Make sure your default pdf viewer is microsoft edge, not Adobe.</p>
+            <!-- <p style="text-align: center;">Your instrument is, <%= userInstrument %> -->
+            </p>
+
+            <h2>Welcome</h2>
+            <% for(classNote of welcomeNotes){%>
+                <p><a href="/pdf/welcome/<%= classNote.filename %>" target="_blank">
+                        <%= classNote.filename %>
+                    </a></td>
+                </p>
+                <% }%>
+                    <h2>Theory</h2>
+                    <% for(classNote of theoryNotes){%>
+                        <p><a href="/pdf/theory/<%= classNote.filename %>" target="_blank">
+                                <%= classNote.filename %>
+                            </a></td>
+                        </p>
+                        <% }%>
+                            <h2>Recitals</h2>
+                            <% for(classNote of recitalsNotes){%>
+                                <p><a href="/pdf/recitals/<%= classNote.filename %>" target="_blank">
+                                        <%= classNote.filename %>
+                                    </a></td>
+                                </p>
+                                <% }%>
+                                    <h2>Concerts</h2>
+                                    <% for(classNote of concertsNotes){%>
+                                        <p><a href="/pdf/concerts/<%= classNote.filename %>" target="_blank">
+                                                <%= classNote.filename %>
+                                            </a></td>
+                                        </p>
+                                        <% }%>
+                                            <h2>Setup</h2>
+                                            <% for(classNote of classNotes) { if(classNote.subcategory=="setup" ){%>
+                                                <p><a href="/pdf/<%= userInstrument %>/<%= classNote.filename %>"
+                                                        target="_blank">
+                                                        <%= classNote.filename %>
+                                                    </a></td>
+                                                </p>
+                                                <% }}%>
+                                                    <h2>Exercises</h2>
+                                                    <% for(classNote of classNotes){
+                                                        if(classNote.subcategory=="exercises" ){%>
+                                                        <p><a href="/pdf/<%= userInstrument %>/<%= classNote.filename %>"
+                                                                target="_blank">
+                                                                <%= classNote.filename %>
+                                                            </a></td>
+                                                        </p>
+                                                        <% }}%>
+                                                            <h2>Scales and Arpeggios</h2>
+                                                            <% for(classNote of classNotes){
+                                                                if(classNote.subcategory=="Scales and Arpeggios" ){%>
+                                                                <p><a href="/pdf/<%= userInstrument %>/<%= classNote.filename %>"
+                                                                        target="_blank">
+                                                                        <%= classNote.filename %>
+                                                                    </a></td>
+                                                                </p>
+                                                                <% }}%>
+                                                                    <h2>Studies</h2>
+                                                                    <% for(classNote of classNotes){
+                                                                        if(classNote.subcategory=="studies" ){%>
+                                                                        <p><a href="/pdf/<%= userInstrument %>/<%= classNote.filename %>"
+                                                                                target="_blank">
+                                                                                <%= classNote.filename %>
+                                                                            </a></td>
+                                                                        </p>
+                                                                        <% }}%>
+                                                                            <h2>Pieces</h2>
+                                                                            <% for(classNote of classNotes){
+                                                                                if(classNote.subcategory=="pieces" ){%>
+                                                                                <p><a href="/pdf/<%= userInstrument %>/<%= classNote.filename %>"
+                                                                                        target="_blank">
+                                                                                        <%= classNote.filename %>
+                                                                                    </a></td>
+                                                                                </p>
+                                                                                <% }}%>
+
+
+        </div>
+    </main>
+
+
+    <!--render the footer file after rendering current page-- >
+    <% - include('includes/footer.ejs') %>

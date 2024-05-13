@@ -1,0 +1,24 @@
+<!-- <%- include('includes/header.ejs') %> -->
+<%
+<!-- condition for when typeof is error variable from index.js page inside loginprocess and it is undefined then show error message  -->
+if(sessionLoggedIn == true){%>
+    
+        <!-- error variable to show error message -->
+        <%- include('includes/studentHeader.ejs') %>
+<%}
+else {%> 
+        <%- include('includes/header.ejs') %>
+<%}%>
+
+    <div class="instrument_Rent_Purchase">
+        <h2>Need an Instrument?</h2>
+        Please contact us before renting or purchasing your instruments or supplies.
+        <h3>Rent or Buy</h3> You can rent or purchase your Violin or Viola instrument outfits from us. Monthly rental
+        $30 + tax. Everything you need to get started is available through Daly Live Music & Entertainment: instruments,
+        strings & accessories, music stands, metronomes, tuners, and more!
+        <div class="violinImg">
+            <img src="../images/Stentor Student II - Violin Outfit.jpg" alt="">
+        </div>
+    </div>
+
+    <%- include('includes/footer.ejs') %>
